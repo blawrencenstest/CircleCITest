@@ -17,6 +17,4 @@ deployment:
     master:
         branch: master
         commands:
-            - (./gradlew crashlyticsUploadDistributionProduction -PdisablePreFex):
-                timeout: 720
             - ./lab-auto.sh
