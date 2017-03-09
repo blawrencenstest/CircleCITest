@@ -17,5 +17,4 @@ deployment:
     master:
         branch: master
         commands:
-            - curl -X POST -H "Authorization: Bearer $LAB_TOKEN" https://lab-api.nowsecure.com/build/ --data-binary @$CIRCLE_ARTIFACTS/app-debug.apk
-            
+            - curl -X POST --data-binary @$CIRCLE_ARTIFACTS/app-debug.apk -H "Authorization:Bearer $LAB_TOKEN" https://lab-api.nowsecure.com/build/ 
