@@ -17,5 +17,6 @@ deployment:
     master:
         branch: master
         commands:
+            #Send to Lab Automated and run an assessment
             - curl -X POST --data-binary @$CIRCLE_ARTIFACTS/apk/app-debug.apk -H "Authorization:Bearer $LAB_TOKEN" https://lab-api.nowsecure.com/build/
             - curl -X POST -H "Authorization:Bearer $LAB_TOKEN" https://lab-api.nowsecure.com/app/android/bscorp.appbase/assessment/
