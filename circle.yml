@@ -1,0 +1,26 @@
+general:
+    artifacts:
+        - /users/blawrence/documents/circleci
+
+machine:
+  java:
+    version: oraclejdk8
+    
+dependencies:
+  
+    override:
+        - chmod +x gradlew
+      
+
+test:
+    override:
+        - (./gradlew assemble):
+            timeout: 360
+        # copy the build outputs to artifacts
+        - cp -r app/build/outputs $CIRCLE_ARTIFACTS 
+
+deployment:
+  master:
+    commands:
+      ./lab-auto.sh
+      
