@@ -1,25 +1,23 @@
 #!/bin/sh
 
-pwd
+echo "START"
+
+cd $NEVERCODE_BUILD_OUTPUT_DIR
+ls
+
 
 echo "START"
 
-curl \
--X POST \
--H 'Authorization: Bearer '$LAB_KEY \
-https://lab-api.nowsecure.com/build/ --data-binary
 
-if [ $? -eq 0 ]; then
+- curl -X POST --data-binary @app-debug.apk -H "Authorization:Bearer $LAB_TOKEN" https://lab-api.nowsecure.com/build/
 
-echo "COMPLETED"
 
-else
-
-echo "ERROR - CODE: $?"
+echo "Error if any is:"
+echo $?
 
 echo "trigger start"
 curl \
 -X POST \
--H 'Authorization: Bearer '$LAB_KEY \
+-H 'Authorization:Bearer '$LAB_KEY \
 https://lab-api.nowsecure.com/app/android/bscorp.appbase/assessment/
 echo "trigger stop"
