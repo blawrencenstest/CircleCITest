@@ -1,11 +1,25 @@
+#!/bin/sh
+
+pwd
+
+echo "START"
 
 curl \
 -X POST \
 -H 'Authorization: Bearer '$LAB_KEY \
 https://lab-api.nowsecure.com/build/ --data-binary
 
+if [ $? -eq 0 ]; then
 
+echo "COMPLETED"
+
+else
+
+echo "ERROR - CODE: $?"
+
+echo "trigger start"
 curl \
 -X POST \
 -H 'Authorization: Bearer '$LAB_KEY \
 https://lab-api.nowsecure.com/app/android/bscorp.appbase/assessment/
+echo "trigger stop"
