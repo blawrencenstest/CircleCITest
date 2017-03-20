@@ -1,7 +1,7 @@
 Login Basics
 ===
 Login Basics is an implementation of an Android app that support Login with Facebook, Google Plus (G+) and your own login logic.
-The aim of this project is to serve as basis to build apps that require login as a feature.
+
 
 Screenshots
 -------
