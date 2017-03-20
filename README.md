@@ -1,3 +1,9 @@
+I want to trigger a build in CircleCI!
+
+
+
+
+
 Login Basics
 ===
 Login Basics is an implementation of an Android app that support Login with Facebook, Google Plus (G+) and your own login logic.
@@ -21,7 +27,7 @@ Facebook
 
 - Create an Facebook app at https://developers.facebook.com/apps/;
 - Replace the value of facebook_app_id at strings.xml;
- 
+
 
 Google
 -------
@@ -31,7 +37,7 @@ Google
 		a) Select the correct project and package then click on Continue;    
 		b) Click the button on the bottom to Generate configuration files    
 		c) Download the google-services.json for your app and put it at the app/ or mobile/ module directory in your Android project. (The file contains configuration details, such as keys and identifiers, for the services you just enabled)
-		
+
 Own Logic
 -------
 - Replace the code at doInBackground on UserLoginTask at the LoginActivity to your own logic;
